@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Adoções</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Adoções</h1>
+
+    <a href="{% url 'criar_adocao' %}">Adicionar Nova Adoção</a>
+
+    {% if adocoes %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Adotante</th>
+                <th>Animal</th>
+                <th>Data da Adoção</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for adocao in adocoes %}
+            <tr>
+                <td>{{ adocao.id }}</td>
+                <td>{{ adocao.adotante.nome }}</td>
+                <td>{{ adocao.animal.nome }}</td>
+                <td>{{ adocao.data_adocao }}</td>
+                <td>
+                    <a href="{% url 'detalhe_adocao' adocao.pk %}">Ver Detalhes</a> |
+                    <a href="{% url 'editar_adocao' adocao.pk %}">Editar</a> |
+                    <a href="{% url 'deletar_adocao' adocao.pk %}">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>Não há adoções registradas no momento.</p>
+    {% endif %}
+
+    <a href="/">Voltar para a página inicial</a>
+</body>
+</html>

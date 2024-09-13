@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Sistema de Adoção{% endblock %}</title>
     <!-- Inclua seus arquivos CSS aqui -->
+     
 </head>
 <body>
     <header>
         <h1>Sistema de Adoção de Animais</h1>
         <nav>
             <a href="{% url 'lista_animais' %}">Animais</a>
-            <a href="{% url 'lista_adotantes' %}">Adotantes</a>
-            <a href="{% url 'lista_abrigos' %}">Abrigos</a>
+            {% comment %} <a href="{% url 'lista_adotantes' %}">Adotantes</a> {% endcomment %}
+            {% comment %} <a href="{% url 'lista_abrigos' %}">Abrigos</a> {% endcomment %}
         </nav>
     </header>
     

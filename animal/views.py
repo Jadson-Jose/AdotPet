@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 def lista_animais(request):
     animais = Animal.objects.all()
-    return render(request, 'animais/lista.html', {'animais': animais})
+    return render(request, 'animais/lista_animais.html', {'animais': animais})
 
 
 def detalhe_animal(request, pk):
