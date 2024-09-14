@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Adotante
+from .forms import AdotanteForm
 
-# Create your views here.
+def lista_adotantes(request):
+    ...
