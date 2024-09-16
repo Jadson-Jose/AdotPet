@@ -1,0 +1,30 @@
+{% load static %}
+{% block 'head' %}
+
+<link rel="stylesheet" href="{% static 'adotante/css/lista_adotantes.css' %}">
+
+{% endblock 'head' %}
+
+{% block 'body' %}
+<div class="container">
+    <h1>Lista de Adotantes</h1>
+    <a href="{% url 'criar_adotante' %}" class="adicionar-adotante">Adicionar Novo Adotante</a>
+    <ul class="adotante-lista">
+        {% for adotante in adotantes %}
+        <li>
+            <span class="adotante-nome">{{ adotante.nome }}</span>
+            <div class="adotante-acoes">
+                <a href="{% url 'detalhe_adotante' adotante.pk %}" class="detalhes">Detalhes</a>
+                <a href="{% url 'editar_adotante' adotante.pk %}" class="editar">Editar</a>
+                <a href="{% url 'deletar_adotante' adotante.pk %}" class="deletar">Deletar</a>
+            </div>
+        </li>
+        {% empty %}
+        <p>Nenhum adotante encontrado.</p>
+        {% endfor %}
+    </ul>
+</div>
+<footer>
+    <p>Desenvolvido com ❤️ para os pets. <a href="#">Saiba mais</a></p>
+</footer>
+{% endblock 'body' %}

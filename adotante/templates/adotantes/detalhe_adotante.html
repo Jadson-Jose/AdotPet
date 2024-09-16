@@ -1,0 +1,21 @@
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'adotante/css/detalhe_adotantes.css' %}">
+{% endblock head %}
+
+{% block body %}
+<div class="container">
+    <h1>Detalhes do Adotante</h1>
+    <div class="adotante-info">
+        <p><strong>Nome:</strong> {{ adotante.nome }}</p>
+        <p><strong>Email:</strong> {{ adotante.email }}</p>
+        <p><strong>Telefone:</strong> {{ adotante.telefone }}</p>
+        <p><strong>Endereço:</strong> {{ adotante.endereco }}</p>
+        <p><strong>Data de Nascimento:</strong> {{ adotante.data_nascimento }}</p>
+    </div>
+    <a href="{% url 'lista_adotantes' %}" class="botao-voltar">Voltar para a lista</a>
+</div>
+<footer>
+    <p>Desenvolvido com carinho para os animais. <a href="#">Saiba mais</a></p>
+</footer>
+{% endblock body %}

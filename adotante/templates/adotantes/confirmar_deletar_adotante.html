@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmar Deleção do Adotante</title>
+</head>
+<body>
+    <h1>Deletar Adotante</h1>
+    <p>Você tem certeza que deseja deletar o adotante {{ adotante.nome }}?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Deletar</button>
+    </form>
+
+    <a href="{% url 'lista_adotantes' %}">Cancelar</a>
+</body>
+</html>

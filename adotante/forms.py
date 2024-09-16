@@ -6,4 +6,4 @@ from adotante.models import Adotante
 class AdotanteForm(forms.ModelForm):
     class Meta:
         model = Adotante
-        fields = '__all__'
+        fields = ['nome', 'email', 'telefone', 'endereco', 'data_nascimento']

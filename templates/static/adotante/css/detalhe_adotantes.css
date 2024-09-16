@@ -1,0 +1,110 @@
+/* styles.css */
+
+/* Estilo base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #fdfdfd;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cabeçalho da página */
+h1 {
+    font-size: 2.5rem;
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+/* Informações do adotante */
+.adotante-info {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.adotante-info p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.adotante-info strong {
+    color: #ff6f61;
+}
+
+/* Estilo do botão */
+a.botao-voltar {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #ff6f61;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+a.botao-voltar:hover {
+    background-color: #e85b50;
+}
+
+/* Adicionando toques visuais do mundo pet */
+.container::before {
+    content: '';
+    background-image: url('/static/images/pet-paw-print.png'); /* Exemplo de imagem de patinhas */
+    background-repeat: no-repeat;
+    background-size: 150px;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    opacity: 0.2;
+}
+
+.container::after {
+    content: '';
+    background-image: url('/static/images/pet-bone.png'); /* Exemplo de imagem de ossinhos */
+    background-repeat: no-repeat;
+    background-size: 150px;
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    opacity: 0.1;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+footer a {
+    color: #ff6f61;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
