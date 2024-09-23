@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-def lista_abrigo(request):
+def lista_abrigos(request):
     abrigos = Abrigo.objects.all()
     return render(request, 'abrigo/lista_abrigo.html', {'abrigos': abrigos})
 

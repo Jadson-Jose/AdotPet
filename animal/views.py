@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_list_or_404, redirect
+from django.shortcuts import get_object_or_404, render, get_list_or_404, redirect
 from .models import Animal
 from .forms import AnimalForm
 from django.contrib.auth.decorators import login_required
@@ -10,8 +10,8 @@ def lista_animais(request):
 
 
 def detalhe_animal(request, pk):
-    animal = get_list_or_404(animal, pk=pk)
-    return render(request, 'animais/detalhe.html')
+    animal = get_object_or_404(Animal, pk=pk)
+    return render(request, 'animais/detalhe_animal.html', {'animal': animal})
 
 
 @login_required
@@ -27,7 +27,7 @@ def criar_animal(request):
 
 
 def editar_animal(request, pk):
-    animal = get_list_or_404(Animal, pk=pk)
+    animal = get_object_or_404(Animal, pk=pk)
     if request.method == 'POST':
         form = AnimalForm(request.POST, request.FILES, instance=animal)
         if form.is_valid():
@@ -35,7 +35,7 @@ def editar_animal(request, pk):
             return redirect('detalhe_animal.html')
     else:
         form = AnimalForm(instance=animal)
-        return render(request, 'animal/formulario.html', {'form': form})
+        return render(request, 'animais/formulario.html', {'form': form})
 
 
 def deletar_animal(request, pk):

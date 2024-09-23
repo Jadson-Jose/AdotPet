@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Animal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .animal-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .animal-info p {
+            font-size: 18px;
+            color: #555;
+        }
+        .animal-info p span {
+            font-weight: bold;
+        }
+        .actions {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .actions a {
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .actions a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Detalhes do Animal</h1>
+    
+    <div class="animal-info">
+        <p><span>Nome:</span> {{ animal.nome }}</p>
+        <p><span>Espécie:</span> {{ animal.especie }}</p>
+        <p><span>Raça:</span> {{ animal.raca }}</p>
+        <p><span>Idade:</span> {{ animal.idade }}</p>
+        <p><span>Porte:</span> {{ animal.porte }}</p>
+        <p><span>Cor:</span> {{ animal.cor }}</p>
+        <p><span>Descrição:</span> {{ animal.descricao }}</p>
+        <p><span>Data de Chegada:</span> {{ animal.data_resgate }}</p>
+        <p><span>Abrigo:</span> {{ animal.abrigo.nome }}</p>
+    </div>
+
+    <div class="actions">
+        <a href="{% url 'editar_animal' animal.pk %}">Editar</a>
+        <a href="{% url 'deletar_animal' animal.pk %}">Deletar</a>
+        <a href="{% url 'lista_animais' %}">Voltar à Lista</a>
+    </div>
+</div>
+
+</body>
+</html>

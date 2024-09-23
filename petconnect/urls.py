@@ -9,4 +9,5 @@ urlpatterns = [
     path('animal/', include('animal.urls')),
     path('adocao/', include('adocao.urls')),
     path('adotante/', include('adotante.urls')),
+    path('abrigo/', include('abrigo.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

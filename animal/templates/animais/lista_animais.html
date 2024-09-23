@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Lista de Animais{% endblock %}
 
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'animal/css/lista_animal.css' %}">
+{% endblock 'head' %}
+
+
+
+
 {% block content %}
 <h2>Animais Disponíveis para Adoção</h2>
-<a href="{% url 'criar_animal' %}">Adicionar Novo Animal</a>
+<a class="animal-list-container" href="{% url 'criar_animal' %}">Adicionar Novo Animal</a>
 <table>
     <tr>
         <th>Nome</th>
@@ -33,4 +41,4 @@
     </tr>
     {% endfor %}
 </table>
-{% endblock %}
+{% endblock  %}

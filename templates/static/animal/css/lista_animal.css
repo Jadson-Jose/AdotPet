@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 20px;
+}
+
+/*container for the animal list */
+.animal-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
