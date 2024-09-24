@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Deleção</title>
+    <!-- Link para o CSS externo -->
+    <link rel="stylesheet" href="{% static 'animal/css/confirmar_delecao.css' %}">
+    <!-- Fonte Poppins do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Título da página -->
+        <h1>Confirmar Deleção</h1>
+
+        <!-- Mensagem de alerta para confirmar a ação -->
+        <div class="alert">
+            <h2>Tem certeza que deseja deletar o animal "{{ animal.nome }}"?</h2>
+            <p>Essa ação é irreversível e o animal será removido permanentemente do sistema.</p>
+        </div>
+
+        <!-- Botões de confirmação e cancelamento -->
+        <div class="buttons">
+            <!-- Formulário com CSRF token e botão de confirmação de deleção -->
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn-delete">Deletar</button>
+            </form>
+
+            <!-- Botão para cancelar e voltar ao detalhe do animal -->
+            <a href="{% url 'detalhe_animal' animal.pk %}" class="btn-cancel">Cancelar</a>
+        </div>
+    </div>
+</body>
+</html>

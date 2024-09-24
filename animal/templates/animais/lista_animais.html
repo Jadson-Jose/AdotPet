@@ -4,7 +4,7 @@
 {% block title %}Lista de Animais{% endblock %}
 
 {% block 'head' %}
-<link rel="stylesheet" href="{% static 'animal/css/lista_animal.css' %}">
+<link rel="stylesheet" href="{% static 'animal/css/animais.css' %}">
 {% endblock 'head' %}
 
 
@@ -12,7 +12,7 @@
 
 {% block content %}
 <h2>Animais Disponíveis para Adoção</h2>
-<a class="animal-list-container" href="{% url 'criar_animal' %}">Adicionar Novo Animal</a>
+<a class="add-animal-btn" href="{% url 'criar_animal' %}">Adicionar Novo Animal</a>
 <table>
     <tr>
         <th>Nome</th>

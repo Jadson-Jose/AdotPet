@@ -1,12 +1,28 @@
-{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'animal/css/editar_animal.css' %}">
+{% endblock head %}
 
 {% block title %}{{ form.instance.pk|yesno:"Editar Animal,Adicionar Animal" }}{% endblock %}
 
 {% block content %}
 <h2>{{ form.instance.pk|yesno:"Editar Animal,Adicionar Animal" }}</h2>
+
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
+    
+    {# Verifica se o animal já tem uma foto para exibir #}
+    {% if form.instance.foto %}
+    <div class="img-atual">
+        <label>Foto atual:</label>
+        <img src="{{ form.instance.foto.url }}" alt="Foto do animal" width="150">
+    </div>
+    {% endif %}
+    
+    {# Exibe o formulário normalmente #}
     {{ form.as_p }}
+
     <button type="submit">Salvar</button>
 </form>
-{% endblock %}
+{% endblock content %}

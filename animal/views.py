@@ -32,14 +32,14 @@ def editar_animal(request, pk):
         form = AnimalForm(request.POST, request.FILES, instance=animal)
         if form.is_valid():
             form.save()
-            return redirect('detalhe_animal.html')
+            return redirect('detalhe_animal', pk=animal.pk)
     else:
         form = AnimalForm(instance=animal)
         return render(request, 'animais/formulario.html', {'form': form})
 
 
 def deletar_animal(request, pk):
-    animal = get_list_or_404(Animal, pk=pk)
+    animal = get_object_or_404(Animal, pk=pk)
     if request.method == 'POST':
         animal.delete()
         return redirect('lista_animais')
