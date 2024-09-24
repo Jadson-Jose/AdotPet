@@ -1,0 +1,94 @@
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.container {
+  width: 50%;
+  margin: 5% auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.alert h2 {
+  font-size: 1.8em;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.alert p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Botões de deletar e cancelar */
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+.btn-cancel {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #2980b9;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .buttons a,
+  .buttons button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

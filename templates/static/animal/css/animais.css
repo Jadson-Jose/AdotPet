@@ -1,0 +1,164 @@
+/* Estilo geral */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1,
+h2 {
+  color: #2c3e50;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+nav a {
+  margin: 0 15px;
+  padding: 10px 20px;
+  color: white;
+  background-color: #3498db;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #2980b9;
+}
+
+/* Estilo da Tabela de Animais */
+.table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+th {
+  background-color: #3498db;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+}
+
+td:last-child {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #2ecc71;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #27ae60;
+}
+
+button.excluir {
+  background-color: #e74c3c;
+}
+
+button.excluir:hover {
+  background-color: #c0392b;
+}
+
+/* Estilo para "Adicionar Novo Animal" */
+.add-animal-btn {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #2ecc71;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.add-animal-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ecf0f1;
+  color: #7f8c8d;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+footer a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin-bottom: 10px;
+  }
+
+  td:last-child {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
